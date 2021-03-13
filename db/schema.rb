@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_013821) do
+ActiveRecord::Schema.define(version: 2021_03_12_004316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "apis", force: :cascade do |t|
-    t.integer "external_code"
+  create_table "purchases", force: :cascade do |t|
+    t.integer "external_code_purchase"
     t.integer "store"
     t.string "sub_total"
     t.string "delivery_fee"
@@ -30,32 +30,17 @@ ActiveRecord::Schema.define(version: 2021_03_12_013821) do
     t.datetime "dt_order_create"
     t.string "postal_code"
     t.string "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "custumers", force: :cascade do |t|
-    t.string "external_code"
-    t.string "name"
-    t.string "email"
-    t.string "contact"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.string "external_code"
-    t.string "name"
-    t.boolean "price"
-    t.integer "quantity"
-    t.boolean "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.string "type"
-    t.boolean "value"
+    t.string "external_code_customer"
+    t.string "customer_name"
+    t.string "customer_email"
+    t.string "customer_contact"
+    t.string "external_code_item"
+    t.string "item_name"
+    t.boolean "item_price"
+    t.integer "item_quantity"
+    t.boolean "item_total"
+    t.string "payment_type"
+    t.boolean "paymant_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
