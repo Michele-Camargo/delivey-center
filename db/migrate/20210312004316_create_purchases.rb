@@ -11,6 +11,7 @@ class CreatePurchases < ActiveRecord::Migration[5.2]
       t.string   :state
       t.string   :city
       t.string   :street
+      t.string   :district
       t.string   :complement
       t.datetime :dt_order_create
       t.string   :postal_code
