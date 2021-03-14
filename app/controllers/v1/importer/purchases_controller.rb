@@ -1,4 +1,4 @@
-class V1::Purchases < ApplicationController
+class V1::Importer::Purchases < ApplicationController
   require 'json'
   attr_reader :params, :type
 
